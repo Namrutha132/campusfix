@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampusFix | College Maintenance</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#home"><span class="brand-mark">CF</span><span>CampusFix<small>College Maintenance Portal</small></span></a>
+  <nav>
+    <a href="#home">Home</a><a href="#services">Services</a><a href="#about">About</a>
+    <a href="#student-area">Student</a><a href="#admin-area">Admin</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="hero-copy">
+      <p class="eyebrow">A BETTER CAMPUS STARTS HERE</p>
+      <h1>Report it.<br><span>Track it.</span><br>Fix it.</h1>
+      <p class="hero-text">A simple campus maintenance portal to report problems and follow their progress until they are resolved.</p>
+      <div class="hero-actions"><a class="button primary" href="#student-area">Get Started</a><a class="button secondary" href="#services">Explore Services</a></div>
+    </div>
+    <div class="hero-card">
+      <div class="card-icon">✓</div><p class="eyebrow">CAMPUS CARE</p><h2>Your concern<br>has a place.</h2>
+      <p>One portal for electrical, water, cleaning and classroom maintenance complaints.</p>
+      <div class="mini-stats"><div><strong>01</strong><small>Submit</small></div><div><strong>02</strong><small>Track</small></div><div><strong>03</strong><small>Resolve</small></div></div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="section-heading"><p class="eyebrow">WHAT CAN YOU REPORT?</p><h2>Campus services</h2><p>Choose the category that best describes the issue.</p></div>
+    <div class="service-grid">
+      <article class="service-card"><span>⚡</span><h3>Electrical issues</h3><p>Lights, fans, switches and power-related problems.</p></article>
+      <article class="service-card"><span>💧</span><h3>Water problems</h3><p>Water supply, taps, washrooms and plumbing issues.</p></article>
+      <article class="service-card"><span>✦</span><h3>Cleaning</h3><p>Classroom, corridor and campus cleanliness concerns.</p></article>
+      <article class="service-card"><span>▤</span><h3>Classroom issues</h3><p>Benches, boards, doors and other classroom facilities.</p></article>
+    </div>
+  </section>
+
+  <section class="section split" id="about">
+    <div><p class="eyebrow">ABOUT CAMPUSFIX</p><h2>Small reports.<br>Meaningful improvements.</h2></div>
+    <p>CampusFix helps students report maintenance issues in one place. Students can submit and track complaints, while the administrator can review reports and update their status.</p>
+  </section>
+
+  <section class="section workspace" id="student-area">
+    <div class="section-heading"><p class="eyebrow">STUDENT PORTAL</p><h2>Student access</h2><p>Create an account or sign in to submit and track complaints.</p></div>
+    <div class="two-column">
+      <form class="panel" id="registerForm">
+        <h3>Create student account</h3>
+        <label>Full name<input id="studentName" required maxlength="60" placeholder="Your name"></label>
+        <label>USN / Student ID<input id="studentUSN" required maxlength="30" placeholder="Your USN"></label>
+        <label>Email<input id="studentEmail" type="email" required maxlength="100" placeholder="name@example.com"></label>
+        <label>Password<input id="studentPassword" type="password" required minlength="4" maxlength="60" placeholder="At least 4 characters"></label>
+        <button class="button primary full" type="submit">Register</button>
+      </form>
+      <form class="panel" id="loginForm">
+        <h3>Student login</h3>
+        <label>USN / Student ID<input id="loginUSN" required maxlength="30" placeholder="Your USN"></label>
+        <label>Password<input id="loginPassword" type="password" required maxlength="60" placeholder="Your password"></label>
+        <button class="button primary full" type="submit">Login</button>
+        <p class="hint">After login, the complaint form and your complaint history will appear below.</p>
+      </form>
+    </div>
+    <div class="panel hidden" id="studentDashboard">
+      <div class="dashboard-head"><div><p class="eyebrow">STUDENT DASHBOARD</p><h3 id="studentWelcome">Welcome</h3></div><button class="button secondary" id="studentLogout" type="button">Logout</button></div>
+      <div class="two-column">
+        <form id="complaintForm">
+          <h3>Submit a complaint</h3>
+          <label>Category<select id="category" required><option value="">Select category</option><option>Electrical</option><option>Water</option><option>Cleaning</option><option>Classroom</option><option>Other</option></select></label>
+          <label>Location<input id="location" required maxlength="100" placeholder="Example: Block A, Room 203"></label>
+          <label>Complaint details<textarea id="description" required maxlength="500" rows="4" placeholder="Describe the issue clearly"></textarea></label>
+          <button class="button primary full" type="submit">Submit complaint</button>
+        </form>
+        <div><h3>My complaints</h3><div id="myComplaints" class="complaint-list"><p class="muted">Your complaints will appear here.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section workspace admin-section" id="admin-area">
+    <div class="section-heading"><p class="eyebrow">ADMINISTRATION</p><h2>Admin dashboard</h2><p>Review submitted complaints and update their progress.</p></div>
+    <div class="panel admin-login" id="adminLoginPanel">
+      <form id="adminLoginForm"><h3>Administrator login</h3><label>Username<input id="adminUsername" required value="admin"></label><label>Password<input id="adminPassword" type="password" required placeholder="Admin password"></label><button class="button primary" type="submit">Admin login</button><p class="hint">Demo login: username <b>admin</b>, password <b>admin123</b>.</p></form>
+    </div>
+    <div class="panel hidden" id="adminDashboard">
+      <div class="dashboard-head"><div><p class="eyebrow">ADMIN DASHBOARD</p><h3>Complaint overview</h3></div><button class="button secondary" id="adminLogout" type="button">Logout</button></div>
+      <div class="stats-grid"><div class="stat"><strong id="totalCount">0</strong><span>Total</span></div><div class="stat"><strong id="pendingCount">0</strong><span>Pending</span></div><div class="stat"><strong id="progressCount">0</strong><span>In progress</span></div><div class="stat"><strong id="resolvedCount">0</strong><span>Resolved</span></div></div>
+      <div id="allComplaints" class="complaint-list"><p class="muted">No complaints yet.</p></div>
+    </div>
+  </section>
+</main>
+<footer><a class="brand footer-brand" href="#home"><span class="brand-mark">CF</span><span>CampusFix<small>Making campus better together</small></span></a><p>Student-built academic project · C backend</p></footer>
+<div id="toast" class="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>
